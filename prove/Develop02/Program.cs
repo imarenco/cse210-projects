@@ -46,6 +46,7 @@ class Program
                     prompt.SaveToFile(journal.getEntries());
                     break;
                 case 6:
+                    // remove
                    journal.removeEntry();
                    break;
                  case 5:
