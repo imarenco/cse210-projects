@@ -6,8 +6,6 @@ public class Entry
     private string _question;
 
     private string _response;
-
-
     public void setDate(string date)
     {
         this._date = date;

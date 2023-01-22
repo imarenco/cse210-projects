@@ -10,8 +10,8 @@ class Program
         Console.WriteLine("3. Load");
         Console.WriteLine("4. Save");
         Console.WriteLine("5. Quit");
-
-
+        Console.WriteLine("6. Remove");
+    
         Console.WriteLine("What would you like to do?:");
         string read = Console.ReadLine();
         return Int32.Parse(read);
@@ -45,6 +45,9 @@ class Program
                  // save
                     prompt.SaveToFile(journal.getEntries());
                     break;
+                case 6:
+                   journal.removeEntry();
+                   break;
                  case 5:
                  default:
                     quit = true;
