@@ -13,7 +13,7 @@ public class PromptGenetator
             for (int i = 0; i < entries.Count; i++)
             {
                 Entry entry = entries[i];
-                string line = entry.getDate() + "," + entry.getQuestion() + "," + entry.getResponse();
+                string line = entry.getDate() + "|" + entry.getQuestion() + "|" + entry.getResponse();
                 outputFile.WriteLine(line);
             }
         }
@@ -27,7 +27,7 @@ public class PromptGenetator
         List<Entry> list = new List<Entry>();
         foreach (string line in lines)
         {
-            string[] parts = line.Split(",");
+            string[] parts = line.Split("|");
             Entry entry = new Entry();
             entry.setDate(parts[0]);
             entry.setQuestion(parts[1]);
