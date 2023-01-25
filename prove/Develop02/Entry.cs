@@ -6,34 +6,35 @@ public class Entry
     private string _question;
 
     private string _response;
-    public void setDate(string date)
+    public void SetDate(string date)
     {
         this._date = date;
     }
 
 
-    public void setQuestion(string question)
+    public void SetQuestion(string question)
     {
         this._question = question;
     }
 
 
-    public void setResponse(string response) {
+    public void SetResponse(string response)
+    {
         this._response = response;
     }
 
-    public string getDate()
+    public string GetDate()
     {
         return this._date;
     }
 
 
-    public string getQuestion()
+    public string GetQuestion()
     {
         return this._question;
     }
 
-    public string getResponse()
+    public string GetResponse()
     {
         return this._response;
     }

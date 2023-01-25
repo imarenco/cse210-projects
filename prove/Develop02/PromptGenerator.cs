@@ -1,7 +1,16 @@
 using System;
 using System.IO;
 public class PromptGenetator
+
 {
+
+    public static String GetRandomPrompt()
+    {
+        string[] prompts = new[] { "Who was the most interesting person I interacted with today?", "What was the best part of my day?", "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?", "What time do you get up?", "Where do you eat breakfast?" };
+        Random random = new Random();
+        int index = random.Next(0, prompts.Length);
+        return prompts[index];
+    }
 
     public void SaveToFile(List<Entry> entries)
     {
@@ -13,7 +22,7 @@ public class PromptGenetator
             for (int i = 0; i < entries.Count; i++)
             {
                 Entry entry = entries[i];
-                string line = entry.getDate() + "|" + entry.getQuestion() + "|" + entry.getResponse();
+                string line = entry.GetDate() + "|" + entry.GetQuestion() + "|" + entry.GetResponse();
                 outputFile.WriteLine(line);
             }
         }
@@ -29,9 +38,9 @@ public class PromptGenetator
         {
             string[] parts = line.Split("|");
             Entry entry = new Entry();
-            entry.setDate(parts[0]);
-            entry.setQuestion(parts[1]);
-            entry.setResponse(parts[2]);
+            entry.SetDate(parts[0]);
+            entry.SetQuestion(parts[1]);
+            entry.SetResponse(parts[2]);
             list.Add(entry);
         }
 

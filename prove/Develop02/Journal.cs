@@ -1,59 +1,55 @@
 using System;
 
 public class Journal
-{
-    private string[] _questions = new [] {"Who was the most interesting person I interacted with today?","What was the best part of my day?", "How did I see the hand of the Lord in my life today?", "What was the strongest emotion I felt today?", "If I had one thing I could do over today, what would it be?", "What time do you get up?", "Where do you eat breakfast?"};
+{    
     private List<Entry> _entries = new List<Entry>();
-
-
-    public String getQuestion() {
-        Random random = new Random();
-        int index = random.Next(0, this._questions.Length);
-        return this._questions[index];
-    }
 
     public void AddEntry()
     {
-        string question = this.getQuestion();
+        string question = PromptGenetator.GetRandomPrompt();
         Console.WriteLine(question);
-        
+
         string response = Console.ReadLine();
-        
+
         DateTime theCurrentTime = DateTime.Now;
         string dateText = theCurrentTime.ToShortDateString();
-        
+
         Entry entry = new Entry();
-        entry.setDate(dateText);
-        entry.setQuestion(question);
-        entry.setResponse(response);
+        entry.SetDate(dateText);
+        entry.SetQuestion(question);
+        entry.SetResponse(response);
         this._entries.Add(entry);
     }
 
-    public void removeEntry() {
+    public void RemoveEntry()
+    {
         Console.WriteLine("What would you like to remove?:");
         string read = Console.ReadLine();
         this._entries.RemoveAt(Int32.Parse(read));
     }
 
 
-    public void setEntries(List<Entry> entries) {
+    public void SetEntries(List<Entry> entries)
+    {
         this._entries = entries;
     }
 
-    public void DisplayAllEntries() {
-        for(int i=0; i < this._entries.Count ;i++)
+    public void DisplayAllEntries()
+    {
+        for (int i = 0; i < this._entries.Count; i++)
         {
-            Entry entry = this._entries[i];            
-            string str = "Date:" + entry.getDate() + " - Prompt: " + entry.getQuestion();
+            Entry entry = this._entries[i];
+            string str = "Date:" + entry.GetDate() + " - Prompt: " + entry.GetQuestion();
             Console.WriteLine(str);
-            Console.WriteLine(entry.getResponse());
+            Console.WriteLine(entry.GetResponse());
         }
 
     }
 
 
-    public List<Entry> getEntries() {
+    public List<Entry> GetEntries()
+    {
         return this._entries;
     }
- 
+
 }

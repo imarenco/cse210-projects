@@ -3,7 +3,8 @@ using System;
 class Program
 {
 
-    static Int32 getMenuChoice() {
+    static Int32 GetMenuChoice()
+    {
         Console.WriteLine("Please select one of the following choices:");
         Console.WriteLine("1. Write");
         Console.WriteLine("2. Display");
@@ -11,7 +12,7 @@ class Program
         Console.WriteLine("4. Save");
         Console.WriteLine("5. Quit");
         Console.WriteLine("6. Remove");
-    
+
         Console.WriteLine("What would you like to do?:");
         string read = Console.ReadLine();
         return Int32.Parse(read);
@@ -23,34 +24,35 @@ class Program
         Journal journal = new Journal();
         PromptGenetator prompt = new PromptGenetator();
 
-        while (!quit) {
-            
-            Int32 action = getMenuChoice();
+        while (!quit)
+        {
+
+            Int32 action = GetMenuChoice();
 
             switch (action)
             {
                 case 1:
-                // write
+                    // write
                     journal.AddEntry();
                     break;
                 case 2:
-                // display
+                    // display
                     journal.DisplayAllEntries();
                     break;
                 case 3:
-                 // load
-                    journal.setEntries(prompt.LoadFromFile());
+                    // load
+                    journal.SetEntries(prompt.LoadFromFile());
                     break;
-                 case 4: 
-                 // save
-                    prompt.SaveToFile(journal.getEntries());
+                case 4:
+                    // save
+                    prompt.SaveToFile(journal.GetEntries());
                     break;
                 case 6:
                     // remove
-                   journal.removeEntry();
-                   break;
-                 case 5:
-                 default:
+                    journal.RemoveEntry();
+                    break;
+                case 5:
+                default:
                     quit = true;
                     break;
             }
