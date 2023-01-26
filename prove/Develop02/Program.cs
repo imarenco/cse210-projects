@@ -3,21 +3,6 @@ using System;
 class Program
 {
 
-    static Int32 GetMenuChoice()
-    {
-        Console.WriteLine("Please select one of the following choices:");
-        Console.WriteLine("1. Write");
-        Console.WriteLine("2. Display");
-        Console.WriteLine("3. Load");
-        Console.WriteLine("4. Save");
-        Console.WriteLine("5. Quit");
-        Console.WriteLine("6. Remove");
-
-        Console.WriteLine("What would you like to do?:");
-        string read = Console.ReadLine();
-        return Int32.Parse(read);
-    }
-
     static void Main(string[] args)
     {
         bool quit = false;
@@ -58,4 +43,20 @@ class Program
             }
         }
     }
+
+    static Int32 GetMenuChoice()
+    {
+        Console.WriteLine("Please select one of the following choices:");
+        Console.WriteLine("1. Write");
+        Console.WriteLine("2. Display");
+        Console.WriteLine("3. Load");
+        Console.WriteLine("4. Save");
+        Console.WriteLine("5. Quit");
+        Console.WriteLine("6. Remove");
+
+        Console.WriteLine("What would you like to do?:");
+        string read = Console.ReadLine();
+        return Int32.Parse(read);
+    }
+
 }
