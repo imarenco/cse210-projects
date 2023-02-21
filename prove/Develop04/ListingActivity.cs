@@ -4,12 +4,12 @@ using System;
 public class ListingActivity : Activity
 {
     private string[] _prompts;
-    public ListingActivity(string name, string startMessage, string endMessage, string[] prompts) : base(name, startMessage, endMessage)
+    public ListingActivity(string name, string startMessage, string[] prompts) : base(name, startMessage)
     {
         this._prompts = prompts;
     }
 
-    public void showRandomPrompt()
+    public void DisplayRandomPrompt()
     {
         Random random = new Random();
         int index = random.Next(0, _prompts.Length);
@@ -21,7 +21,7 @@ public class ListingActivity : Activity
         Console.WriteLine("");
     }
 
-    public void readListAndDisplay()
+    public void ReadListAndDisplay()
     {
         Console.Write("\rYou might begin in:        ");
         Console.WriteLine("");

@@ -5,7 +5,7 @@ public class ReflectingActivity : Activity
 {
     private string[] _prompts;
     private string[] _questions;
-    public ReflectingActivity(string name, string startMessage, string endMessage, string[] prompts, string[] questions) : base(name, startMessage, endMessage)
+    public ReflectingActivity(string name, string startMessage, string[] prompts, string[] questions) : base(name, startMessage)
     {
         this._prompts = prompts;
         this._questions = questions;
@@ -13,7 +13,7 @@ public class ReflectingActivity : Activity
 
 
 
-    public void showRandomPrompt()
+    public void DisplayRandomPrompt()
     {
         Random random = new Random();
         int index = random.Next(0, _prompts.Length);
@@ -44,7 +44,7 @@ public class ReflectingActivity : Activity
 
     public void DisplayQuestions()
     {
-        List<int> missQuestions =  new List<int>();
+        List<int> missQuestions = new List<int>();
         DateTime now = DateTime.Now;
         DateTime future = DateTime.Now.AddSeconds(this._duration);
 
@@ -55,7 +55,7 @@ public class ReflectingActivity : Activity
             missQuestions.Append(index);
 
             Console.WriteLine(question);
-            showLoading(false);
+            DisplayLoading(false);
 
             now = DateTime.Now;
         }

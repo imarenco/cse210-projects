@@ -4,18 +4,14 @@ using System;
 public class Activity
 {
     private string _name;
-    //private string _description;
     protected int _duration;
     private string _startMessage;
-    private string _endMessage;
 
 
-    public Activity(string name, string startMessage, string endMessage)
+    public Activity(string name, string startMessage)
     {
         this._name = name;
-        //this._description = description;
         this._startMessage = startMessage;
-        this._endMessage = endMessage;
     }
 
     public void DisplayStartMessage()
@@ -25,7 +21,7 @@ public class Activity
         Console.WriteLine(this._startMessage);
     }
 
-    public void setDuration()
+    public void SetDuration()
     {
         Console.WriteLine("");
         Console.WriteLine("How long in senconds, would you like for your session?");
@@ -34,7 +30,7 @@ public class Activity
         this._duration = seconds;
     }
 
-    public void showLoading(Boolean isWord)
+    public void DisplayLoading(Boolean isWord)
     {
         if (isWord)
         {
@@ -66,7 +62,7 @@ public class Activity
         Console.WriteLine("");
     }
 
-    public void showCountDown()
+    public void DisplayCountDown()
     {
         Console.WriteLine("");
         int time = 5;
@@ -88,7 +84,7 @@ public class Activity
         Console.WriteLine("");
         Console.WriteLine("Well Done!!!");
         Console.WriteLine("You have completed another " + this._duration + " seconds of the " + this._name + " Activity");
-        showLoading(false);
+        DisplayLoading(false);
 
     }
 

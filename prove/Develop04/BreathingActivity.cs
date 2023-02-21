@@ -3,12 +3,12 @@ using System;
 
 public class BreathingActivity : Activity
 {
-    public BreathingActivity(string name, string startMessage, string endMessage) : base(name, startMessage, endMessage)
+    public BreathingActivity(string name, string startMessage) : base(name, startMessage)
     {
     }
 
 
-    public void showCountdownUntilTheEnd()
+    public void DisplayCountdownUntilTheEnd()
     {
         DateTime now = DateTime.Now;
         DateTime future = DateTime.Now.AddSeconds(this._duration);
