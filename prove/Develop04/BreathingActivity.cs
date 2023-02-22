@@ -3,7 +3,7 @@ using System;
 
 public class BreathingActivity : Activity
 {
-    public BreathingActivity(string name, string startMessage) : base(name, startMessage)
+    public BreathingActivity(string name, string description) : base(name, description)
     {
     }
 

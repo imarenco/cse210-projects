@@ -5,7 +5,7 @@ public class ReflectingActivity : Activity
 {
     private string[] _prompts;
     private string[] _questions;
-    public ReflectingActivity(string name, string startMessage, string[] prompts, string[] questions) : base(name, startMessage)
+    public ReflectingActivity(string name, string description, string[] prompts, string[] questions) : base(name, description)
     {
         this._prompts = prompts;
         this._questions = questions;

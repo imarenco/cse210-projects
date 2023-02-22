@@ -5,20 +5,20 @@ public class Activity
 {
     private string _name;
     protected int _duration;
-    private string _startMessage;
+    private string _description;
 
 
-    public Activity(string name, string startMessage)
+    public Activity(string name, string description)
     {
         this._name = name;
-        this._startMessage = startMessage;
+        this._description = description;
     }
 
     public void DisplayStartMessage()
     {
         Console.WriteLine("Welcome to the " + this._name + " Activity.");
         Console.WriteLine("");
-        Console.WriteLine(this._startMessage);
+        Console.WriteLine(this._description);
     }
 
     public void SetDuration()

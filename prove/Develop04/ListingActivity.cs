@@ -4,7 +4,7 @@ using System;
 public class ListingActivity : Activity
 {
     private string[] _prompts;
-    public ListingActivity(string name, string startMessage, string[] prompts) : base(name, startMessage)
+    public ListingActivity(string name, string description, string[] prompts) : base(name, description)
     {
         this._prompts = prompts;
     }
