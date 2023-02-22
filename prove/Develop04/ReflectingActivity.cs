@@ -52,7 +52,7 @@ public class ReflectingActivity : Activity
         {
             int index = getRandomQuestion(missQuestions);
             string question = _questions[index];
-            missQuestions.Append(index);
+            missQuestions.Add(index);
 
             Console.WriteLine(question);
             DisplayLoading(false);
