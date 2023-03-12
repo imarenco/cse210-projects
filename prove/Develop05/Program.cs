@@ -63,12 +63,12 @@ class Program
                         Boolean isCompleted = goals[position].GetIsCompleted();
                         int points = goals[position].GetGoalPoints();
                         totalPoints = totalPoints + points;
-                        TerminalManager.ShowCongratulationText(points, totalPoints);
                         if (isCompleted && goals[position].GetType() == "checklist")
                         {
                             ChecklistGoal checklist = (ChecklistGoal)goals[position];
                             totalPoints = totalPoints + checklist.GetBonus();
                         }
+                        TerminalManager.ShowCongratulationText(points, totalPoints);
                         break;
                     }
                 case "7":
