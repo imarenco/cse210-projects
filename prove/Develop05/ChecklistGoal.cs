@@ -3,11 +3,11 @@ using System;
 
 public class ChecklistGoal : Goal
 {
-    int _bonus;
+    private int _bonus;
 
-    int _times;
+    private int _times;
 
-    int _completed;
+    private int _completed;
     public ChecklistGoal(string name, string description, int points, string type, int bonus, int times) : base(name, description, points, type)
     {
         this._bonus = bonus;
@@ -24,9 +24,10 @@ public class ChecklistGoal : Goal
     }
 
 
-public int GetCompleted() {
-    return this._completed;
-}
+    public int GetCompleted()
+    {
+        return this._completed;
+    }
 
     public override Boolean GetIsCompleted()
     {

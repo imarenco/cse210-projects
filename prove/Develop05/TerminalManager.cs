@@ -10,6 +10,7 @@ class TerminalManager
         Console.WriteLine("4. Load Goals");
         Console.WriteLine("5. Record Event");
         Console.WriteLine("6. Quit");
+        Console.WriteLine("7. Delete Goal");
         Console.WriteLine("Select a choice from the menu:");
 
         string read = Console.ReadLine();
@@ -96,6 +97,13 @@ class TerminalManager
     public static int GetAccomplish()
     {
         Console.WriteLine("Wich goal did you want to accomplish?");
+        return int.Parse(Console.ReadLine()) - 1;
+    }
+
+
+    public static int GetDeletePosition()
+    {
+        Console.WriteLine("Wich goal did you want to delete?");
         return int.Parse(Console.ReadLine()) - 1;
     }
 

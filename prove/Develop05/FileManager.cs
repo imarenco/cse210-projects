@@ -78,8 +78,8 @@ public class FileManager
                 else if (type == "checklist")
                 {
                     int bonus = int.Parse(parts[4]);
-                    int times = int.Parse(parts[4]);
-                    int completed = int.Parse(parts[5]);
+                    int times = int.Parse(parts[5]);
+                    int completed = int.Parse(parts[6]);
 
                     ChecklistGoal goal = new ChecklistGoal(name, description, points, type, bonus, times, completed);
                     list.Add(goal);

@@ -13,16 +13,16 @@ class Program
 
         while (read != "6")
         {
-            read = Menu.GetMenuChoice();
+            read = TerminalManager.GetMenuChoice();
 
             switch (read)
             {
                 case "1":
                     {
-                        string creationType = Menu.GetCreatedGoalType();
-                        string name = Menu.GetGoalName();
-                        string description = Menu.GetGoalDescription();
-                        int points = Menu.GetGoalPoints();
+                        string creationType = TerminalManager.GetCreatedGoalType();
+                        string name = TerminalManager.GetGoalName();
+                        string description = TerminalManager.GetGoalDescription();
+                        int points = TerminalManager.GetGoalPoints();
                         if (creationType == "1")
                         {
                             SimpleGoal simple = new SimpleGoal(name, description, points, "simple");
@@ -35,8 +35,8 @@ class Program
                         }
                         else if (creationType == "3")
                         {
-                            int times = Menu.GetHowManyTimes();
-                            int bonus = Menu.GetBonus();
+                            int times = TerminalManager.GetHowManyTimes();
+                            int bonus = TerminalManager.GetBonus();
                             ChecklistGoal checklist = new ChecklistGoal(name, description, points, "checklist", bonus, times);
                             goals.Add(checklist);
                         }
@@ -44,7 +44,7 @@ class Program
                     }
                 case "2":
                     {
-                        Menu.ShowListGoals(goals, false);
+                        TerminalManager.ShowListGoals(goals, false);
                         break;
                     }
                 case "3":
@@ -57,13 +57,13 @@ class Program
                     break;
                 case "5":
                     {
-                        Menu.ShowListGoals(goals, true);
-                        int position = Menu.GetAccomplish();
+                        TerminalManager.ShowListGoals(goals, true);
+                        int position = TerminalManager.GetAccomplish();
                         goals[position].SetCompleted();
                         Boolean isCompleted = goals[position].GetIsCompleted();
                         int points = goals[position].GetGoalPoints();
                         totalPoints = totalPoints + points;
-                        Menu.ShowCongratulationText(points, totalPoints);
+                        TerminalManager.ShowCongratulationText(points, totalPoints);
                         if (isCompleted && goals[position].GetType() == "checklist")
                         {
                             ChecklistGoal checklist = (ChecklistGoal)goals[position];
@@ -71,6 +71,14 @@ class Program
                         }
                         break;
                     }
+                case "7":
+                    {
+                        TerminalManager.ShowListGoals(goals, true);
+                        int position = TerminalManager.GetDeletePosition();
+                        goals.RemoveAt(position);
+                        break;
+                    }
+
             }
 
             Console.WriteLine("You have " + totalPoints + " points.");
