@@ -1,0 +1,3 @@
+300
+simple|simple goal|description simple goal|200|True
+checklist|checklist goal|short description simple goal|100|50|3|2
