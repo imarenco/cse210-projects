@@ -4,6 +4,16 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation4 World!");
+        Console.Clear();
+
+        List<Activity> activities = ActivityGenerator.GetActivities();
+
+        foreach (Activity activity in activities)
+        {
+            Console.WriteLine(activity.GetSummary());
+            Console.WriteLine("---------------------------------------------------------------------------------");
+        }
+
+
     }
 }
